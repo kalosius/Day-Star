@@ -17,7 +17,7 @@ class SitterForm(forms.ModelForm):
 
     class Meta:
         model = Sitter
-        fields = '__all__'
+        fields = ['name', 'gender', 'location', 'next_of_kin', 'nin', 'recommender_name', 'religion', 'education_level', 'sitter_number', 'contact1', 'contact2']
 
 
 class BabyForm(forms.ModelForm):
@@ -40,7 +40,6 @@ class PaymentForm(forms.ModelForm):
     amount = forms.DecimalField(label="Amount", widget=forms.NumberInput(attrs={"class":"form-control", "placeholder":"Ugx"}))
     payment_type = forms.CharField(label="Baby", widget=forms.TextInput(attrs={"class":"form-control", "placeholder":"Payment Type"}))
     
-
     class Meta:
         model = Payment
         fields = '__all__'
@@ -51,7 +50,6 @@ class ProcurementForm(forms.ModelForm):
     quantity = forms.IntegerField(label="Quantity", widget=forms.NumberInput(attrs={"class":"form-control", "placeholder":""}), required=True)
     unit_price = forms.IntegerField(label="Unit Price", widget=forms.NumberInput(attrs={"class":"form-control", "placeholder":""}), required=True)
     
-
     class Meta:
         model = Procurement
         fields = '__all__'

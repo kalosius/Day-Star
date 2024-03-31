@@ -1,18 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
+<style>
+  .card{
+    border: none !important;
+  }
+</style>
+
 <div class="container">
-  
   <div class="card">
-    <div class="card-title">
-      <center>      <h2>New Baby Sitter</h2>
-      </center>
+    <div class="card-header">
+      <h2>New Baby Sitter</h2>
     </div>
+    
     <div class="card-body">
-      <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-secondary">Submit</button>
-      </form>
+      <div class="card-title">
+        <center><h5>Fill out this form to register new sitter</h5></center>
+      </div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-secondary">Submit</button>
+        </form>
+
     </div>
   </div>
 </div>
