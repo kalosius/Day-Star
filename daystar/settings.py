@@ -7,9 +7,9 @@ BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__)))
 SECRET_KEY = 'django-insecure-i1i-$um@dnwv1-c-y_odgmyb@#&vyo5-%=!)8&ei2^60(b%a&7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -96,9 +96,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = "static/"
-
-
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
