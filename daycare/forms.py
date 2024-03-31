@@ -38,6 +38,7 @@ class BabyForm(forms.ModelForm):
 class PaymentForm(forms.ModelForm):
     baby =forms.CharField(label="Baby", widget=forms.TextInput(attrs={"class":"form-control", "placeholder":"Select Baby"}))
     amount = forms.DecimalField(label="Amount", widget=forms.NumberInput(attrs={"class":"form-control", "placeholder":"Ugx"}))
+    payment_type = forms.CharField(label="Baby", widget=forms.TextInput(attrs={"class":"form-control", "placeholder":"Payment Type"}))
     
 
     class Meta:
@@ -46,6 +47,11 @@ class PaymentForm(forms.ModelForm):
 
 
 class ProcurementForm(forms.ModelForm):
+    item_name = forms.CharField(label="Item Name", widget=forms.TextInput(attrs={"class":"form-control", "placeholder":"E.g Apples"}), required=True)
+    quantity = forms.IntegerField(label="Quantity", widget=forms.NumberInput(attrs={"class":"form-control", "placeholder":""}), required=True)
+    unit_price = forms.IntegerField(label="Unit Price", widget=forms.NumberInput(attrs={"class":"form-control", "placeholder":""}), required=True)
+    
+
     class Meta:
         model = Procurement
         fields = '__all__'
