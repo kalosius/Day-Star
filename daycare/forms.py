@@ -19,16 +19,31 @@ class SitterForm(forms.ModelForm):
         model = Sitter
         fields = '__all__'
 
-class BabyForm(forms.ModelForm):
 
+class BabyForm(forms.ModelForm):
+    name = forms.CharField(label="", widget=forms.TextInput(attrs={"class":"form-control", "placeholder":"Full Name"}), required=True)
+    gender = forms.CharField(label="", widget=forms.TextInput(attrs={"class":"form-control", "placeholder":"Gender"}), required=True)
+    # age = forms.IntegerField(label="", widget=forms.IntegerField(attrs={"class":"form-control", "placeholder":"Age"}), required=True)
+    location = forms.CharField(label="", widget=forms.TextInput(attrs={"class":"form-control", "placeholder":"Location"}), required=True)
+    brought_by = forms.CharField(label="", widget=forms.TextInput(attrs={"class":"form-control", "placeholder":"Full Name of Owner"}), required=True)
+    parents_names = forms.CharField(label="", widget=forms.TextInput(attrs={"class":"form-control", "placeholder":"Parent's Name"}), required=True)
+    period_of_stay = forms.CharField(label="", widget=forms.TextInput(attrs={"class":"form-control", "placeholder":"Period Of Stay"}), required=True)
+    baby_number = forms.IntegerField(label="", widget=forms.NumberInput(attrs={"class":"form-control", "placeholder":"Baby ID Number"}))
+    
     class Meta:
         model = Baby
         fields = '__all__'
 
+
 class PaymentForm(forms.ModelForm):
+    baby =forms.CharField(label="Baby", widget=forms.TextInput(attrs={"class":"form-control", "placeholder":"Select Baby"}))
+    amount = forms.DecimalField(label="Amount", widget=forms.NumberInput(attrs={"class":"form-control", "placeholder":"Ugx"}))
+    
+
     class Meta:
         model = Payment
         fields = '__all__'
+
 
 class ProcurementForm(forms.ModelForm):
     class Meta:
