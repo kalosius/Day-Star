@@ -11,7 +11,8 @@ class Sitter(models.Model):
     religion = models.CharField(max_length=50, null=True, blank=True)
     education_level = models.CharField(max_length=50)
     sitter_number = models.IntegerField(unique=True)
-    contacts = models.CharField(max_length=100)
+    contact1 = models.CharField(max_length=16, null=True)
+    contact2 = models.CharField(max_length=16, null=True)
     active = models.BooleanField(default=True)
 
     def __str__(self):
@@ -33,6 +34,10 @@ class Baby(models.Model):
 
     class Meta:
         verbose_name_plural = "Babies"
+    
+    def __str__(self):
+        return self.name
+
 
 
 class Payment(models.Model):
@@ -40,6 +45,10 @@ class Payment(models.Model):
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     payment_type = models.CharField(max_length=20)  # Half day or Full day
     timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.baby
+
 
 
 class Procurement(models.Model):
@@ -49,3 +58,7 @@ class Procurement(models.Model):
 
     class Meta:
         verbose_name_plural = "Procurement"
+    
+    def __str__(self):
+        return self.item_name
+
