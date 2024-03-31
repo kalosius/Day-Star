@@ -1,24 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <div class="container">
-  <h2>Add Payment</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-secondary">Submit</button>
-    <label for=""></label>
-  
-    {{ item_name }}
-    {{ item.unit_price}}
-    {{ item.quantity }}
-    
-  </form>
-  <div>
-    <h3>Additional Information</h3>
-    <p>Item Name: {{ item_name }}</p>
-    <p>Unit Price: {{ item.unit_price }}</p>
-    <p>Quantity: {{ item.quantity }}</p>
+  <div class="card">
+    <div class="card-header">
+        <h2>Add Payment</h2>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+    </div>
   </div>
 </div>
-</div>
+  
 {% endblock %}
