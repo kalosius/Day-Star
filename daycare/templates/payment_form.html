@@ -6,6 +6,19 @@
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="btn btn-secondary">Submit</button>
+    <label for=""></label>
+  
+    {{ item_name }}
+    {{ item.unit_price}}
+    {{ item.quantity }}
+    
   </form>
+  <div>
+    <h3>Additional Information</h3>
+    <p>Item Name: {{ item_name }}</p>
+    <p>Unit Price: {{ item.unit_price }}</p>
+    <p>Quantity: {{ item.quantity }}</p>
+  </div>
+</div>
 </div>
 {% endblock %}
